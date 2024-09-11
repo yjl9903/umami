@@ -95,9 +95,9 @@ model WebsiteEvent {
   visitId        String    @map("visit_id") @db.Uuid
   createdAt      DateTime? @default(now()) @map("created_at") @db.Timestamptz(6)
   urlPath        String    @map("url_path") @db.VarChar(500)
-  urlQuery       String?   @map("url_query") @db.VarChar(500)
+  urlQuery       String?   @map("url_query") @db.Text
   referrerPath   String?   @map("referrer_path") @db.VarChar(500)
-  referrerQuery  String?   @map("referrer_query") @db.VarChar(500)
+  referrerQuery  String?   @map("referrer_query") @db.Text
   referrerDomain String?   @map("referrer_domain") @db.VarChar(500)
   pageTitle      String?   @map("page_title") @db.VarChar(500)
   eventType      Int       @default(1) @map("event_type") @db.Integer
